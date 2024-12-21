@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+body {
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.small-head{
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition:all 0.5s;
+}
+
+.news-contents,.news-contents-image{
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition:all 0.5s;
+}
+
+
+
+/* サイト表示時アニメーション　共通 */
+.menu-anime{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.bg {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100vh;
+  color: #fff;
+}
+
+.bg.-visible:before {
+  transform: translate(0, 0);
+}
+
+.bg:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a33e46;
+  transform: translate(0, -100%);
+  transition: transform cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s;
+  content: '';
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+/* SP style */
+
+/* アニメーション再生後 */
+
+.main{
+    width: 100%;
+    margin-right: 100px;
+}
+
+.right-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100px;
+    height: 100vh;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.head-image{
+    z-index: 700;
+}
+
+.head-image-box{
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.head-image-1{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    animation: zoomIn 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.head-image-2{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    animation: zoomIn 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+
+    @keyframes zoomIn {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+  /* お知らせ */
+
+  .small-head{
+    width: 100%;
+    height: 60px;
+    background-color: #888;
+  }
+
+  .news-contents-list{
+    margin-top: 50px;
+    padding: 5%;
+    flex-wrap: wrap;
+  }
+
+      .news-contents-image{
+        width: 100%;
+        object-fit: cover;
+      }
+
+  /* about */
+
+.about{
+  width: 100%;
+  height: 400px;
+  background-color: #555;
+}
+
+.location-contents-list{
+  width: 100%;
+}
+
+
+.location-image{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.view-visible-info{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+}
+
+
+@media screen and (min-width: 769px) {
+/* PC style */
+
+
+.main{
+width: 100%;
+}
+
+.right-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 10%;
+    height: 100vh;
+    background-color: #888;
+}
+
+.head-image{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.head-image-box{
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.head-image-1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.head-image-2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes zoomIn {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+
+  /* お知らせ */
+
+.news{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.wrap{
+  width: 90%;
+  display: flex;
+  padding: 30px;
+}
+
+/* 小見出し */
+
+.small-head{
+  width: 100px;
+  height: 300px;
+  background-color: #888;
+}
+
+/* 小見出し */
+
+.news-contents-list{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.news-contents-list li{
+  width: 30%;
+  margin-left: 10px;
+}
+
+.news-contents-image{
+  width: 100%;
+  object-fit: cover;
+}
+
+/* about */
+
+.about{
+  width: 100%;
+  height: 600px;
+  background-color: #555;
+}
+
+.location-contents-list{
+  width: 100%;
+  margin-left: 50px;
+}
+
+.view-visible{
+  height: 500px;
+  display: flex;
+  margin-top: 30px;
+  justify-content:space-around;
+}
+
+.location-image{
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  order: 3;
+}
+
+.view-visible-info{
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  order: 2;
+}
+
+
+
+}
