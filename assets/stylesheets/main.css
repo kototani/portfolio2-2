@@ -1,18 +1,12 @@
 @charset "UTF-8";
 
-body {
-  animation: fadeIn 2s ease 0s 1 normal;
-  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+.wrapper {
+  animation: fadeOut 2s;
 }
 
-@keyframes fadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
+@keyframes fadeOut {
+  0% {opacity: 1}
+  100% {opacity: 0}
 }
 
 .small-head{
@@ -91,7 +85,53 @@ body {
 
 .head-image{
     z-index: 700;
+    position: relative;
 }
+
+.head-image-right,
+.head-image-left{
+  width: 100%;
+  display: flex;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.slide-wrapper1{
+  width: 200%;
+  display: flex;
+  overflow: hidden;
+  animation: slide-flow1 20s infinite linear 1s both;
+}
+
+.slide-wrapper2{
+  display: flex;
+  animation: slide-flow2 20s infinite linear 1s both;
+}
+
+.head-image-right img,
+.head-image-left img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+@keyframes slide-flow1 {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(100%);}
+ }
+
+ @keyframes slide-flow2 {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+ }
+
+  .center {
+	margin: auto;
+  }
+
+
+
+
 
 .head-image-box{
   width: 100%;
@@ -100,19 +140,6 @@ body {
   overflow: hidden;
 }
 
-.head-image-1{
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    animation: zoomIn 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-.head-image-2{
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    animation: zoomIn 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-    }
 
     @keyframes zoomIn {
         0% {
