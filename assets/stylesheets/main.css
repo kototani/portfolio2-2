@@ -83,55 +83,32 @@
     opacity: 0.3;
 }
 
-.head-image{
-    z-index: 700;
-    position: relative;
+/* コンテナー */
+.container-1, .container-2{
+  margin: 0 auto;
 }
 
-.head-image-right,
-.head-image-left{
+/* スライダーのwrapper */
+.infinite-slider1 .swiper-wrapper {
+  transition-timing-function: linear;
+  height: 50vh !important; /* 高さを指定 */
+}
+
+/* スライド */
+.infinite-slider1 .swiper-slide {
+  width: 100% !important;
+}
+
+/* スライド内の画像 */
+.infinite-slider1 .swiper-slide img {
   width: 100%;
-  display: flex;
-  height: 50vh;
-  overflow: hidden;
+  height: 100%;
+  object-fit: cover;
 }
-
-.slide-wrapper1{
-  width: 200%;
-  display: flex;
-  overflow: hidden;
-  animation: slide-flow1 20s infinite linear 1s both;
-}
-
-.slide-wrapper2{
-  display: flex;
-  animation: slide-flow2 20s infinite linear 1s both;
-}
-
-.head-image-right img,
-.head-image-left img{
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-}
-
-@keyframes slide-flow1 {
-  0% {transform: translateX(0);}
-  100% {transform: translateX(100%);}
- }
-
- @keyframes slide-flow2 {
-  0% {transform: translateX(0);}
-  100% {transform: translateX(-100%);}
- }
 
   .center {
 	margin: auto;
   }
-
-
-
-
 
 .head-image-box{
   width: 100%;
@@ -139,7 +116,6 @@
   position: relative;
   overflow: hidden;
 }
-
 
     @keyframes zoomIn {
         0% {

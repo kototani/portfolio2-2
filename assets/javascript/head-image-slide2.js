@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  const infiniteSlider = new Swiper(".infinite-slider", {
+  const infiniteSlider = new Swiper(".infinite-slider2", {
     loop: true,
     slidesPerView: "1",
     spaceBetween: 0,
@@ -8,5 +8,6 @@ window.addEventListener("load", () => {
       delay: 3000,
       disableOnInteraction: false,
     },
+    direction: 'rtl',  // スライド右方向
   });
 });
