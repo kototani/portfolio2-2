@@ -8,8 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/stylesheets/reset.css"/>
     <link rel="stylesheet" href="assets/stylesheets/main.css" />
+     <!--スライドJQ -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+     <!-- アニメーション-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- フェードインJQ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>portfolio2</title>
 </head>
 
@@ -20,11 +24,16 @@
   <div class="menu-anime">
     <header class="bg">
     </header>
-    </div>
+  </div>
 
     <div class="mainSite">
 
       <header class="right-menu">
+        <div class="btn-trigger">
+          <span></span>
+          <span></span>
+      <p>MENU</p>
+        </div>
       </header>
 
     <div class="main">
@@ -38,6 +47,16 @@
               <div class="swiper-slide"><img src="assets/images/AdobeStock_319485862.jpeg"alt="画像2" /></div>
               <div class="swiper-slide"><img src="assets/images/AdobeStock_626082520.jpeg" alt="画像3" /></div>
             </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="container-1">
+          <div class="swiper infinite-slider1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="assets/images/AdobeStock_319485862.jpeg"alt="画像2" /></div>
+              <div class="swiper-slide"><img src="assets/images/AdobeStock_626082520.jpeg" alt="画像3" /></div>
+              <div class="swiper-slide"><img src="assets/images/AdobeStock_242779484.jpeg" alt="画像1" /></div>
+            </div>
           </div>
         </div>
 
@@ -46,52 +65,54 @@
     </script>
     <script src="assets/javascript/head-image-slide1.js">
     </script>
-    <script src="assets/javascript/head-image-slide2.js">
-    </script>
 
       </section>
 
       <section class="news">
         <div class="wrap">
-        <div class="small-head">
-          <h2>お知らせ</h2>
-          <h3>NEWS</h3>
-        </div>
+          <div class="small-head">
+            <h2>お知らせ</h2>
+            <h3>NEWS</h3>
+          </div>
         <div class="news-contenst">
           <ul class="news-contents-list">
             <li class="news-contents-list-item">
               <img class="news-contents-image" src="assets/images/AdobeStock_626082520.jpeg">
               <div class="news-contents-text">
               <h3>【Information】能登半島地震復興支援特別メニューの実績報告</h3>
-              <h4>平素より当店をご愛顧いただき誠にありがとうございます。
-                皆様に能登半島地震の復興支援として販売してまいりました「なすそうめん」の実績報告をさせていただきます。</h4>
+              <p>平素より当店をご愛顧いただき誠にありがとうございます。
+                皆様に能登半島地震の復興支援として販売してまいりました「なすそうめん」の実績報告をさせていただきます。</p>
               </div>
             </li>
             <li class="news-contents-list-item">
               <img class="news-contents-image" src="assets/images/AdobeStock_626082520.jpeg">
               <div class="news-contents-text">
               <h3>【NEWS】ビジネスランチに最適2月1日よりスタート｜日比谷OKUROJI店限定</h3>
-              <h4>日比谷OKUROJI店では2024年2月1日(木)よりビジネスランチなどに最適なセットの販売をスタートいたします。</h4>
+              <p>日比谷OKUROJI店では2024年2月1日(木)よりビジネスランチなどに最適なセットの販売をスタートいたします。</p>
               </div>
             </li>
             <li class="news-contents-list-item">
               <img class="news-contents-image" src="assets/images/AdobeStock_626082520.jpeg">
               <div class="news-contents-text">
               <h3>【Information】年末年始の営業についてお知らせ</h3>
-              <h4>日頃よりそうめん そそそ各店をご利用いただき、誠にありがとうございます。年末年始の営業について下記の通りとさせていただきます。</h4>
+              <p>日頃よりそうめん そそそ各店をご利用いただき、誠にありがとうございます。年末年始の営業について下記の通りとさせていただきます。</p>
               </div>
             </li>
           </ul>
           </div>
         </div>
-        <div class="view-visible">
+      </section>
+
+      <script src="assets/javascript/fadein.js"></script>
+
+        <div class="view-more">
           <span class="dli-chevron-down"></span>
           <p>記事をもっと見る</p>
         </div>
-      </section>
+
 
       <section class="about">
-      <div class="about">
+      <div class="about-text">
 
         <h2>そうめん専門店「そそそ」とは</h2>
 
@@ -158,18 +179,23 @@
         </div>
       </section>
 
-      <section class="onlineshop">
-        <div class="onlineshop-contents">
-          <h2>SHOP NAME</h2>
-          <a>オンラインショップへ</a>
+      <section class="shop">
+        <div class="about-text">
+          <h2>そうめん専門店「そそそ」とは</h2>
         </div>
         </section>
 
     </div>
 
-  <footer>
-
+  <footer class="footer">
+   <ul>
+    <li><a>TOP</a></li>
+    <li><a>恵比寿本店</a></li>
+    <li><a>オンラインショップ</a></li>
+   </ul>
+   <p>©2024</p>
   </footer>
+
   </div>
 
 
@@ -177,5 +203,6 @@
 
 <script src="assets/javascript/menu-slide.js">
 </script>
+
 </body>
 </html>
