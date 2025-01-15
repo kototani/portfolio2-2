@@ -262,6 +262,8 @@
 /* コンテナー */
 .container-1, .container-2{
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
 /* スライダーのwrapper */
@@ -280,7 +282,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(1);
+  opacity: 1;
 }
+
+/* ズームイン・アウト用のクラス */
+.zoomIn {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
 
 /* スライダーのwrapper */
 .infinite-slider2 .swiper-wrapper {
@@ -311,16 +323,6 @@
   overflow: hidden;
 }
 
-    @keyframes zoomIn {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      }
 
   /* お知らせ */
 

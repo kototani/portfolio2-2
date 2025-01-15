@@ -1,17 +1,23 @@
- // それぞれのSwiperインスタンスを個別に初期化
- const swiper1 = new Swiper(".infinite-slider1", {
-  loop: true,
-  speed: 1000, // スライドのスピード
-  autoplay: { // 自動再生
-    delay: 2000, // 1.5秒後に次のスライド
-  },
-});
+window.addEventListener('load', function () {
+  const swiper1 = new Swiper(".infinite-slider1", {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+  });
 
-const swiper2 = new Swiper(".infinite-slider2", {
-  loop: true,
-  speed: 1000, // スライドのスピード
-  autoplay: { // 自動再生
-    delay: 2100, // 1.5秒後に次のスライド
-  },
-  rtl: false, // 逆方向ではなく左から右にスライド
+  // 手動でresizeイベントを発火させる
+  window.dispatchEvent(new Event('resize'));
+
+  const swiper2 = new Swiper(".infinite-slider2", {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    rtl: true, // 右から左にスライド
+  });
 });
