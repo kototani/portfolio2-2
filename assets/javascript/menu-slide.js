@@ -2,42 +2,6 @@ const CLASSNAME = "-visible";
 const TIMEOUT = 2000; // アニメーションのタイミング
 const $target = $(".bg");
 
-let swiper1, swiper2; // スライダーのインスタンスを保存
-
-function initSwiper() {
-    // PC版は縦方向、モバイル版は横方向にする
-    const direction = window.innerWidth >= 769 ? 'vertical' : 'horizontal';
-
-    // すでにインスタンスが存在していれば破棄する
-    if (swiper1) swiper1.destroy(true, true);
-    if (swiper2) swiper2.destroy(true, true);
-
-    // Swiper の初期化
-    swiper1 = new Swiper(".infinite-slider1", {
-        loop: true,
-        speed: 1000,
-        autoplay: { 
-            delay: 2000,
-            disableOnInteraction: false // タッチ操作後も自動再生を止めない
-        },
-        rtl: true, // 右から左にスライド
-        direction: direction, // スライド方向
-        simulateTouch: false, // タッチ操作を無効にする
-    });
-
-    swiper2 = new Swiper(".infinite-slider2", {
-        loop: true,
-        speed: 1000,
-        autoplay: { 
-            delay: 2000,
-            reverseDirection: true,
-            disableOnInteraction: false // タッチ操作後も自動再生を止めない
-        },
-        direction: direction, // スライド方向
-        simulateTouch: false, // タッチ操作を無効にする
-    });
-}
-
 $(function() {
     // 最初はサイトを非表示にする
     $(".mainSite").css("display", "none");
@@ -56,12 +20,27 @@ $(function() {
         $(".mainSite").css({ opacity: '0', display: 'block' }); // 表示をブロックに変更
         $(".mainSite").stop().animate({ opacity: '1' }, 1000); // 1秒でフェードイン
 
-        // 初回のSwiper初期化
-        initSwiper();
-    }, 3500); // アニメーションの終了後3秒
+        // Swiper の初期化
+        const swiper1 = new Swiper(".infinite-slider1", {
+            loop: true,
+            speed: 1000,
+            autoplay: { delay: 2000 },
+            rtl: true, // 右から左にスライド
+            // タッチイベントを無効にする
+            noSwiping: true,
+            touchMoveStopPropagation: false,
+            touchStartPreventDefault: true,
+            simulateTouch: false,  // タッチのシミュレーションを無効にする
+        });
 
-    // リサイズ時にスライダーの方向を再設定
-    $(window).on('resize', function() {
-        initSwiper(); // リサイズ時に再初期化
-    });
+        const swiper2 = new Swiper(".infinite-slider2", {
+            loop: true,
+            speed: 1000,
+            autoplay: { delay: 2000, reverseDirection: true },
+            noSwiping: true,
+            touchMoveStopPropagation: false,
+            touchStartPreventDefault: true,
+            simulateTouch: false,  // タッチのシミュレーションを無効にする
+        });
+    }, 3500); // アニメーションの終了後3秒
 });
