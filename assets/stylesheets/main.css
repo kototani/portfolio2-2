@@ -192,6 +192,8 @@
 @media screen and (max-width: 768px) {
 /* SP style */
 
+.pc{display: none;}
+
 /* アニメーション再生後 */
 
 .main{
@@ -528,6 +530,7 @@ background-color: #555;
 @media screen and (min-width: 769px) {
 /* PC style */
 
+.sp{display: none;}
 
 .main{
 margin-right: 100px;
@@ -585,9 +588,12 @@ margin-right: 100px;
     box-sizing: border-box;
 }
 
+.pc{display: flex;}
+
 /* コンテナー */
 .container-1, .container-2{
   margin: 0 auto;
+  width: 50%;
 }
 
 /* スライダーのwrapper */
