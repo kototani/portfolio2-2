@@ -16,7 +16,7 @@ function initSwiper() {
     swiper1 = new Swiper(".infinite-slider1", {
         loop: true,
         speed: 1000,
-        autoplay: { delay: 2000 },
+        autoplay: { delay: 2000,disableOnInteraction: false },
         rtl: true, // 右から左にスライド
         direction: direction, // スライド方向
     });
@@ -24,7 +24,7 @@ function initSwiper() {
     swiper2 = new Swiper(".infinite-slider2", {
         loop: true,
         speed: 1000,
-        autoplay: { delay: 2000, reverseDirection: true },
+        autoplay: { delay: 2000, reverseDirection: true,disableOnInteraction: false },
         direction: direction, // スライド方向
     });
 }
