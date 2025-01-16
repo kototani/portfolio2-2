@@ -16,16 +16,25 @@ function initSwiper() {
     swiper1 = new Swiper(".infinite-slider1", {
         loop: true,
         speed: 1000,
-        autoplay: { delay: 2000,disableOnInteraction: false },
+        autoplay: { 
+            delay: 2000,
+            disableOnInteraction: false // タッチ操作後も自動再生を止めない
+        },
         rtl: true, // 右から左にスライド
         direction: direction, // スライド方向
+        simulateTouch: false, // タッチ操作を無効にする
     });
 
     swiper2 = new Swiper(".infinite-slider2", {
         loop: true,
         speed: 1000,
-        autoplay: { delay: 2000, reverseDirection: true,disableOnInteraction: false },
+        autoplay: { 
+            delay: 2000,
+            reverseDirection: true,
+            disableOnInteraction: false // タッチ操作後も自動再生を止めない
+        },
         direction: direction, // スライド方向
+        simulateTouch: false, // タッチ操作を無効にする
     });
 }
 
